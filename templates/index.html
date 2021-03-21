@@ -61,7 +61,7 @@
   // datalist options assignment
 
   let str = ''; // variable to store the options
-  let opening_list = '{{ openings_list | tojson |safe }}';
+  let opening_list = JSON.parse('{{ openings_list|tojson }}');
 
   for (var i = 0; i < opening_list.length; ++i) {
     str += '<option value="' + opening_list[i] + '" />'; // Storing options in variable
