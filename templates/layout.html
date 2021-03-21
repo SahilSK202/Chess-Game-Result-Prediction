@@ -11,16 +11,20 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <style>
-        body{
-         background: url(../static/images/chessbg2.jpg) no-repeat center center fixed;
-/*     background-image: url('/chessbg2.jpg') no-repeat center center fixed; */
-  
+       body {
 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-        }
+             margin: 0;
+             padding: 0;
+             font-family: sans-serif;
+
+             background: url(../static/images/chessbg2.jpg) no-repeat center center fixed;
+/*                 background-image: url('/chessbg2.jpg') no-repeat center center fixed; */
+
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+}
     </style>
 
     {% block title %}
