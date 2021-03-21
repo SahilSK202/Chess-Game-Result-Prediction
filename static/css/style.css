@@ -1,0 +1,172 @@
+
+html {
+    height: auto;
+    font-size: 1rem;
+
+}
+
+
+
+body {
+
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    /* background: linear-gradient(#141e30, #243b55); */
+    background: url(/static/images/chessbg2.jpg) no-repeat center center fixed;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+
+h5 {
+    color: blanchedalmond;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 2%;
+
+}
+
+h1 {
+    text-align: center;
+    color: aquamarine;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-size: 3em;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+#title:hover {
+    /* color: aquamarine; */
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+label,
+h6 {
+    /* font-weight: bold; */
+    font-size: 1.2rem;
+    color: white;
+    width: 70%;
+}
+
+button {
+    min-height: 5%;
+    color: aliceblue;
+    background-color: aquamarine;
+    margin-right: 30%;
+    overflow: hidden;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    /* box-sizing: border-box; */
+}
+
+.form-control {
+    margin-bottom: 1rem;
+    width: 70%;
+}
+
+input {
+    height: 3em;
+    margin-right: 0%;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.login-box {
+
+    display: block;
+    padding-left: 25%;
+    align-items: center;
+    /* justify-content: center;  */
+    margin: 0 auto;
+    height: max-content;
+}
+
+#predict {
+    width: 60%;
+    font-size: 2rem;
+    margin: 1% auto;
+    text-align: center;
+    color: aliceblue;
+}
+
+
+
+#wraper {
+    margin-top: 2%;
+    min-width: 100%;
+    position: relative;
+    bottom: 0;
+    height: 150px;
+    color: aliceblue;
+    background-color: black;
+
+
+}
+
+#table {
+    color: black;
+    width: 35%;
+    height: 50%;
+    margin: 0.5% auto;
+    font-size: 20px;
+    background-color: whitesmoke;
+    border: 2px solid darkslateblue;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+   
+}
+
+th {
+    width: 10%;
+}
+
+td {
+    width: 25%;
+}
+
+#crown{
+
+    min-width: 15%; 
+    max-height: 23%;
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+
+}
+
+marquee{
+    /* background-color: black; */
+    color: white;
+
+}
+
+#imp{
+    color: aliceblue;
+    width: 35%;
+    height: 30%;
+    justify-content: center;
+    /* background-color: lightgreen; */
+    background-color: darkslateblue;
+    font-size: 1.4em;
+    margin: 3% auto;
+    padding: 2%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Media Queries */
+
+@media (min-width: 1100px) {
+    
+    #crown{
+        visibility: visible;
+    }
+}
+

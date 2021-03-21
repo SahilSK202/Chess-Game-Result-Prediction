@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+
+<title> Chess Game Result Prediction - Home</title>
+{% endblock %}
+
+
+
+
+
+
+{% block bodycontent %}
+<div id="container" class="container" style="min-width: 50%; max-width: max-content;">
+  <form action="{{ url_for('predict')}}" method="post" class="login-box" onsubmit="return validateForm()">
+
+    <br />
+    <div class="form-group">
+      <label for="White">
+        <h6>Rating of White Player</h6>
+      </label>
+      <input type="number" class="form-control" id="White" placeholder="Enter Rating in range 100 - 2800" name="White"
+        required="required">
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="Black">
+        <h6>Rating of Black Player</h6>
+      </label>
+
+      <input type="number" class="form-control" id="Black" placeholder="Enter Rating in range 100 - 2800" name="Black"
+        required="required">
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="openings">
+        <h6>Game Opening Name</h6>
+      </label>
+
+      <input class="form-control" name="openings" id="openings" list="DataList"  placeholder="Type to search..."
+        required="required">
+      <datalist id="DataList">
+
+      </datalist>
+    </div>
+    <br/>
+
+    <div id="submit_btn" style="text-align: center;" class="d-grid gap-2 d-md-block">
+      <button class="btn btn-primary" type="submit">Predict the Result</button>
+    </div>
+  </form>
+</div>
+
+<!-- Javascript here -->
+
+
+
+<script type="text/javascript">
+
+
+  // datalist options assignment
+
+  let str = ''; // variable to store the options
+  let opening_list = '{{ openings_list | tojson |safe }}';
+
+  for (var i = 0; i < opening_list.length; ++i) {
+    str += '<option value="' + opening_list[i] + '" />'; // Storing options in variable
+  }
+
+  document.getElementById("DataList").innerHTML = str;
+
+  function validateForm() {
+    let White = document.getElementById("White").value;
+    let Black = document.getElementById("Black").value;
+    let opening = document.getElementById("openings").value;
+
+    if (White < 100 || Black < 100) {
+      alert("Rating cannot be less than 100");
+      return false;
+    }
+    if (White > 2800 || Black > 2800) {
+      alert("Grandmaster World Chess Champion Magnus Carlsen is currently highest-rated player ever with rating 2886.😊\nEnter the rating below 2800 !");
+      return false;
+    }
+
+    if (!opening_list.includes(opening)) {
+      alert("Invalid Opening Name !");
+      return false;
+    }
+
+    document.getElementById("predict").style.visibility = "visible";
+  }
+
+</script>
+
+{% endblock %}

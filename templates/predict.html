@@ -1,0 +1,103 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title> Results</title>
+{% endblock %}
+
+
+{% block bodycontent %}
+<div id="predict">
+    
+    <marquee id="marquee" scrollamount ="8" direction="left" ><h3 id="result"> <strong><span>{{obj.winner}} </strong>has <span style="color:greenyellow;">{{obj.prob}} %</span> of chances to win the game ! </span></h3></marquee>
+    <!-- <marquee id="marquee" scrollamount ="8" direction="left" ><h3> <strong><span id="result"></span></h3></marquee> -->
+
+</div>
+
+<div>
+    <img id="crown" src="/static/images/crown.gif" alt="Winner">
+</div>
+
+<br>
+<table id="table" class="table table-bordered">
+
+    <tbody>
+
+        <tr>
+            <th colspan="3" style="text-align: center; font-size: 30px; color: darkblue;">Game Statistics</th>
+        </tr>
+
+        <tr>
+            <th></th>
+            <th>Black</th>
+            <th>White</th>
+
+        </tr>
+        <tr>
+            <th scope="row">Rating</th>
+            <td>{{obj.black_rating}}</td>
+            <td>{{obj.white_rating}}</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Win % </th>
+            <td>{{obj.all_prob[0]}} %</td>
+            <td>{{obj.all_prob[2]}} %</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Draw % </th>
+            <td colspan="2">{{obj.all_prob[1]}} %</td>
+            
+        </tr>
+        <tr>
+            <th scope="row">Opening </th>
+            <td colspan="2">{{obj.opening_name}}</td>
+
+        </tr>
+    </tbody>
+</table>
+<div id="imp">
+    <h3 style="text-align: center;"><strong> Important ❗ </strong></h3>
+    <ul>
+        <li>White always gets the first move advantage.</li>
+        <li>More Data  = More Accuracy 📈 </li>
+        <li>Chess is <a style="color:yellow;" href="http://www.bernmedical.com/blog/how-many-possible-move-combinations-are-there-in-chess"  target="__blank"><strong> Infinite</strong></a> ♾️ </li>
+    </ul>
+
+</div>
+
+<marquee id="marquee" scrollamount ="10" direction="left" onMouseOver=stop(); onMouseOut=start();><h4><strong> NOTE : This Machine Learning Web Application is for Educational / Demo purpose only. Get the source code <a style="color: rgb(62, 62, 231);" href="https://github.com/SahilSK202/Chess-Game-Result-Prediction" target="__black">here.</a></strong></h4></marquee>
+
+<script>
+
+    let winner = '{{obj.winner}}';
+    let whiteprob = '{{obj.all_prob[2]}}';
+    let blackprob = '{{obj.all_prob[0]}}';
+
+
+    let pred_text = '{{obj.winner}} has {{obj.prob}} % of chances to win the game !'
+
+    
+    console.log(parseInt(whiteprob) , parseInt(blackprob));
+    console.log(Math.abs(whiteprob - blackprob));
+
+
+    if (whiteprob > blackprob){
+
+        document.getElementById("crown").style.right ="2%";
+
+    }
+    if(whiteprob < blackprob){
+
+        document.getElementById("crown").style.left ="2%";
+    }
+
+    if(Math.abs(whiteprob - blackprob) < 0.5){
+        document.getElementById("crown").style.visibility ="hidden";
+        pred_text = "Game may result in DRAW !"
+        document.getElementById("result").innerHTML = pred_text;
+
+    }
+
+</script>
+{% endblock %}
