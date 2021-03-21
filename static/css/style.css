@@ -14,7 +14,7 @@ body {
     font-family: sans-serif;
     /* background: linear-gradient(#141e30, #243b55); 
     background: url(chessbg2.jpg) no-repeat center center fixed;*/
-    background-image: url('/static/images/chessbg2.jpg') no-repeat center center fixed;
+    background-image: url('/chessbg2.jpg') no-repeat center center fixed;
   
 
     -webkit-background-size: cover;
