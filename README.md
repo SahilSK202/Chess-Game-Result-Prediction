@@ -42,7 +42,7 @@ This is a set of just over 20,000 games collected from a selection of users on t
 
  
 # Demo
-Live Demo: https://chess-game-result-prediction.herokuapp.com/
+## Live Demo: https://chess-game-result-prediction.herokuapp.com/
 
 ![](https://github.com/SahilSK202/Chess-Game-Result-Prediction/blob/main/static/images/chessapp1.png)
 ![](https://github.com/SahilSK202/Chess-Game-Result-Prediction/blob/main/static/images/chessapp2.png)
