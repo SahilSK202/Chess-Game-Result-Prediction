@@ -35,7 +35,7 @@ This is a set of just over 20,000 games collected from a selection of users on t
     * Splitting the dataset by 67 % for training set and 33 % validation set.
  * **Training and Validation**
     * Logistic Regression with MinMaxScalar gets a higher accuracy score than other classification models.
-    * Logistic Regression ( 99 % accuracy score )
+    * Logistic Regression 
  * **Performance Results**
     * Training Score: 61.5%
     * Validation Score: 63.1%
