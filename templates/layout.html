@@ -10,6 +10,7 @@
 
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style>
        body {
 
@@ -26,36 +27,72 @@
             -o-background-size: cover;
             -moz-background-size: cover;
 }
-    </style>
 
-    {% block title %}
+        .wrapper{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-    {% endblock title %}
+footer{
+    background-color: black;
+    color: white;
+    height: 200px;
+    margin-top: 50px;
+}
+
+.content{
+    margin-bottom: 50px;
+    flex-grow: 1;
+}
+</style>
 
 </head>
 
 <body>
-    <br />
-    <a href="/" >
-        <h1>🐴👑 <span id="title"> Chess Game Result Prediction </span> 🐘🐪</h1>
-    </a>
-    <h5>🤖 Machine Learning Model ⚙</h5>
+    <div class="wrapper">
+        <div class="content">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <!-- <a class="navbar-brand" href="/"><h2>Chess</h2></a> -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <h4><a class="nav-link active" aria-current="page" href="/">Home</a></h4>
+                            </li>
+                            <li class="nav-item">
+                                <h4><a class="nav-link active" aria-current="page" href="/predict">Predict</a></h4>
+                            </li>
+                            <li class="nav-item">
+                                <!-- <h1>🐴👑 Chess Game Result Prediction 🐘🐪</h1> -->
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </nav>
+
+            <h1>🐴👑 Chess Game Result Prediction 🐘🐪</h1>
+            <h5>🤖 Machine Learning Model ⚙</h5>
 
 
-    {% block bodycontent %}
+            {% block bodycontent %}
 
-    {% endblock bodycontent %}
+            {% endblock bodycontent %}
+        </div>
 
-    <!-- footer -->
-    <div id="wraper">
         <footer class="text-center py-4">
             <div class="container md-3">
                 <h4 class="text-uppercase mt-3">Made with ❤️ by Sahil Kavitake</h4>
-<!--                 <p class="monospaced">&copy; Copyright 2021 Sahil Kavitake </p> -->
+                <!-- <p class="monospaced">&copy; Copyright 2021 Sahil Kavitake </p> -->
             </div>
         </footer>
     </div>
-
 </body>
 
 </html>
