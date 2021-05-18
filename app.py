@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import requests
+import json
 import pickle
 import numpy as np
 
@@ -13,11 +14,15 @@ openings_list = sorted([var for var in opening_name_freqmap.keys()])
 
 @app.route('/', methods=['GET'])
 def Home():
-    return render_template('index.html', openings_list=openings_list)
-
-
-@app.route("/predict", methods=['POST'])
+    return render_template('index.html')
+    
+@app.route('/predict', methods=['GET' , 'POST'])
 def predict():
+    return render_template('predict.html', openings_list= openings_list)
+
+
+@app.route("/result", methods=['GET','POST'])
+def result():
 
     if request.method == 'POST':
         class Chess():
@@ -43,10 +48,10 @@ def predict():
         obj.winner = prediction.item().upper()
         obj.prob = round(max(model.predict_proba(single_sample)[0])*100, 2)
         obj.all_prob = [round(var*100,2) for var in model.predict_proba(single_sample)[0]]
-        return render_template('predict.html', obj = obj)
+        return render_template('result.html', obj = obj)
 
     else:
-        return render_template('index.html', openings_list=openings_list)
+        return render_template('predict.html', openings_list=openings_list)
 
 
 if __name__ == "__main__":
