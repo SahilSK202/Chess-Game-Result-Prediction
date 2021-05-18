@@ -135,10 +135,10 @@ td {
 
 #crown{
 
-    min-width: 15%; 
-    max-height: 23%;
+    min-width: 10%; 
+    max-height: 18%;
     position: fixed;
-    top: 2;
+    top: 35px;
     visibility: hidden;
 
 }
