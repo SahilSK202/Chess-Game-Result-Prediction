@@ -1,0 +1,268 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+
+<title> Chess- Home</title>
+{% endblock %}
+
+
+
+{% block bodycontent %}
+
+
+<style>
+    .card:hover {
+        box-shadow: 8px 8px 8px grey;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    .card {
+        width: 30vw;
+        height: 40vh;
+    }
+
+
+    .image-flip.flip .backside {
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+
+        /* transform-style: preserve-3d; */
+
+    }
+
+
+    .image-flip.flip .frontside {
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+        ;
+        /* transform-style: preserve-3d; */
+    }
+
+    .image-flip {
+        margin: 100px auto;
+        width: 300px;
+        height: 250px;
+        display: inline-block;
+    }
+
+    .mainflip {
+        -webkit-transition: 1s;
+        -webkit-transform-style: preserve-3d;
+        -ms-transition: 1s;
+        -moz-transition: 1s;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transition: 1s;
+        transform-style: preserve-3d;
+        /* position: relative; */
+    }
+
+    .frontside,
+    .backside {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transition: 1s;
+        -webkit-transform-style: preserve-3d;
+        -moz-transition: 1s;
+        -moz-transform-style: preserve-3d;
+        -o-transition: 1s;
+        -o-transform-style: preserve-3d;
+        -ms-transition: 1s;
+        -ms-transform-style: preserve-3d;
+        transition: 1s;
+        transform-style: preserve-3d;
+        /* position: relative; */
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .frontside {
+        -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        z-index: 2;
+    }
+
+    .backside {
+        /* background: white; */
+        -webkit-transform: rotateY(-180deg);
+        -moz-transform: rotateY(-180deg);
+        -o-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+    }
+
+    .card,
+    .card-img-top {
+        border-radius: 5px;
+        height: 45vh;
+    }
+
+    .mycards {
+        margin: 10px auto;
+        display: table;
+    }
+
+    .col1,
+    .col2,
+    .col3 {
+        display: table-cell;
+        position: relative;
+    }
+</style>
+<!-- 
+<div class="card-group">
+    <div class="card m-4">
+        <img src="https://mdbootstrap.com/img/new/standard/city/041.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+                This is a wider card with supporting text below as a natural lead-in to
+                additional content. This content is a little bit longer.
+            </p>
+
+        </div>
+    </div>
+    <div class="card m-4">
+        <img src="https://mdbootstrap.com/img/new/standard/city/042.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+                This card has supporting text below as a natural lead-in to additional content.
+            </p>
+
+        </div>
+    </div>
+    <div class="card m-4">
+        <img src="https://mdbootstrap.com/img/new/standard/city/043.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+                This is a wider card with supporting text below as a natural lead-in to
+                additional content. This card has even longer content than the first to show
+                that equal height action.
+            </p>
+        </div>
+    </div>
+</div> -->
+
+<div class="mycards">
+    <div class="image-flip m-5" onclick="this.classList.toggle('flip');">
+        <div class="mainflip col1">
+            <div class="frontside">
+                <div class="card " style="width:20rem;">
+                    <img class="card-img-top img- fluid" src="../static/images/Magnus.jpg" alt="card image">
+                    <div class="card-body">
+                        <h4 class="card-title">What is Chess ?</h4>
+                        <!-- <p class="card-text">This is basic card with image on top, title, description and button.</p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="backside">
+                <div class="card" style="width:20rem;">
+                    <div class="card-header">
+                        What is Chess ?
+                    </div>
+                    <div class="card-body">
+                        <!-- <h4 class="card-title">Card Title</h4> -->
+                        <p class="card-text">It is a competitive board game of strategic skill for two players, played on a checkered board.
+                            Each player begins the game with sixteen pieces that are moved and used to capture opposing pieces according to precise rules.
+                            The objective  is to put the opponent's king under a direct attack from which escape is impossible (checkmate).
+                            </p>
+                        <!-- <a href="#" class="btn btn-info btn-md">Info Button</a> -->
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://www.britannica.com/topic/chess" target="_blank">Visit here for more info.</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="image-flip m-5" onclick="this.classList.toggle('flip');">
+        <div class="mainflip col2">
+            <div class="frontside">
+                <div class="card" style="width:20rem;">
+                    <img class="card-img-top img- fluid" src="../static/images/rating.jpg" alt="card image">
+                    <div class="card-body">
+                        <h4 class="card-title">What is Chess Rating ?</h4>
+                        <!-- <p class="card-text">This is basic card with image on top, title, description and button.</p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="backside">
+                <div class="card" style="width:20rem;">
+                    <div class="card-header">
+                        What is Chess Rating ?
+                    </div>
+                    <div class="card-body">
+                        <!-- <h4 class="card-title">Card Title</h4> -->
+                        <p class="card-text">A chess rating system is used to estimate the strength of a player, based on their performance versus other players. It is expressed by a number that can go from 100 to (theoretically) infinity.
+                        The highest rating ever achieved by a player is an impressive 2882 by GM Magnus Carlsen.</p>
+                        <!-- <a href="#" class="btn btn-info btn-md">Info Button</a> -->
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://www.chess.com/terms/chess-ratings" target="_blank">Visit here for more info.</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="image-flip m-5" onclick="this.classList.toggle('flip');">
+        <div class="mainflip col3">
+            <div class="frontside">
+                <div class="card" style="width:20rem;">
+                    <img class="card-img-top img- fluid" src="../static/images/opening.jpg" alt="card image">
+                    <div class="card-body">
+                        <h4 class="card-title">What is Chess Opening ?</h4>
+                        <!-- <p class="card-text">This is basic card with image on top, title, description and button.</p> -->
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="backside">
+                <div class="card" style="width:20rem;">
+                    <div class="card-header">
+                        What is Chess Opening ?
+                    </div>
+                    <div class="card-body">
+                        <!-- <h4 class="card-title">Card Title</h4> -->
+                        <p class="card-text">A chess opening refers to the initial moves of a chess game. The term can
+                            refer to the initial moves by either side, White or Black, but an opening by Black may also
+                            be known as a defense. There are dozens of different openings, and hundreds of variants. The
+                            Oxford Companion to Chess lists 1,327 named openings and variants.</p>
+                        <!-- <a href="#" class="btn btn-info btn-md">Info Button</a> -->
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://en.wikipedia.org/wiki/Chess_opening" target="_blank">Visit here for more info.</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $('.card').mousedown(function () {
+        console.log("Clicked");
+
+    });
+
+
+</script>
+
+
+
+{% endblock %}
