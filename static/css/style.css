@@ -133,6 +133,14 @@ td {
     width: 25%;
 }
 
+
+marquee{
+    /* background-color: black; */
+    color: white;
+
+}
+
+
 #crown{
 
     min-width: 15%; 
@@ -140,12 +148,6 @@ td {
     position: fixed;
     top: 40px;
     visibility: hidden;
-
-}
-
-marquee{
-    /* background-color: black; */
-    color: white;
 
 }
 
