@@ -85,14 +85,16 @@
     if (whiteprob > blackprob){
 
         document.getElementById("crown").style.right ="2%";
+        document.getElementById("crown").style.top ="40px";
 
     }
     if(whiteprob < blackprob){
 
         document.getElementById("crown").style.left ="2%";
+        document.getElementById("crown").style.top ="40px";
     }
 
-    if(Math.abs(whiteprob - blackprob) < 0.5){
+    if(Math.abs(whiteprob - blackprob) < 1){
         document.getElementById("crown").style.visibility ="hidden";
         pred_text = "Game may result in DRAW !"
         document.getElementById("result").innerHTML = pred_text;
